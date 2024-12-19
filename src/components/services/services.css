@@ -1,0 +1,84 @@
+.services__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Wrap items into rows */
+    gap: 1.5rem; /* Add spacing between items */
+    width: 100%; /* Full width for responsiveness */
+    padding: 1rem; /* Add spacing around the container */
+    box-sizing: border-box; /* Ensure padding doesn't overflow */
+}
+
+.service {
+    background: var(--color-bg-variant);
+    border-radius: 0 0 2rem 2rem;
+    border: 1px solid var(--color-primary);
+    height: fit-content;
+    width: calc(33.33% - 1.5rem); /* Default: 3 items per row */
+    transition: var(--transition);
+    box-sizing: border-box;
+}
+
+.service:hover {
+    background: transparent;
+    border-color: var(--color-primary-variant);
+    cursor: default;
+}
+
+.service__head {
+    background: var(--color-primary);
+    padding: 2rem;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.service__head h3 {
+    color: var(--color-bg);
+    font-size: 1rem;
+    text-align: center;
+}
+
+.service__list {
+    padding: 2rem;
+}
+
+.service__list li {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.service__list-icon {
+    color: var(--color-primary);
+    margin-top: 2px;
+}
+
+.service__list p {
+    font-size: 0.9rem;
+}
+
+/* ------ MEDIA Queries (Tabs/Medium Devices) ------ */
+
+@media screen and (max-width: 1024px) {
+    .services__container {
+        width: 100%; /* Adjust width for medium screens */
+    }
+
+    .service {
+        width: calc(50% - 1.5rem); /* 2 items per row */
+    }
+}
+
+/* ------ MEDIA Queries (Mobile/Small Devices) ------ */
+
+@media screen and (max-width: 600px) {
+    .services__container {
+        width: 100%;
+        padding: 0 1rem;
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .service {
+        width: 100%; /* Full width for small devices */
+        margin-bottom: 1.5rem; /* Spacing between services */
+    }
+}
